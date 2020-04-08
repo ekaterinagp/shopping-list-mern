@@ -6,7 +6,9 @@ const auth = (req, res, next) => {
 
   //Check for token
   if (!token)
-    res.status(401).json({ message: "User is not authorized, no token" });
+    return res
+      .status(401)
+      .json({ message: "User is not authorized, no token" });
 
   try {
     //Verify token
