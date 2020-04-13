@@ -16,8 +16,6 @@ import PropTypes from "prop-types";
 import { register } from "../../actions/authActions";
 import { clearErrors } from "../../actions/errorActions";
 
-// import { v1 as uuid } from "uuid";
-
 class RegisterModal extends Component {
   state = {
     modal: false,
@@ -46,6 +44,7 @@ class RegisterModal extends Component {
     if (error !== prevProps.error) {
       //Check for register error
       if (error.id === "REGISTER_FAIL") {
+        console.log(error.msg.msg);
         this.setState({ msg: error.msg.msg });
       } else {
         this.setState({
