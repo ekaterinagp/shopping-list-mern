@@ -21,8 +21,12 @@
     "bcryptjs": "^2.4.3",
     "concurrently": "^5.1.0",
     "config": "^3.3.1",
+    "detect-file-type": "^0.2.8",
     "express": "^4.17.1",
+    "formidable": "^1.2.2",
+    "fs": "0.0.1-security",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.7"
+    "mongoose": "^5.9.7",
+    "uuid": "^7.0.3"
   }
 }

@@ -11,6 +11,11 @@ const ItemSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  picture: {
+    type: String,
+    requires: true,
+    default: "default.png",
+  },
 });
 
 module.exports = Item = mongoose.model("item", ItemSchema);

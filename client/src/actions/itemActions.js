@@ -1,5 +1,11 @@
 import axios from "axios";
-import { GET_ITEMS, ADD_ITEM, DELETE_ITEM, ITEMS_LOADING } from "./types";
+import {
+  GET_ITEMS,
+  ADD_ITEM,
+  DELETE_ITEM,
+  ITEMS_LOADING,
+  ADD_IMAGE,
+} from "./types";
 import { tokenConfig } from "./authActions";
 import { returnErrors } from "./errorActions";
 // import { STATES } from "mongoose";
@@ -51,4 +57,18 @@ export const setItemsLoading = () => {
   return {
     type: ITEMS_LOADING,
   };
+};
+
+export const addImage = (id) => (dispatch, getState) => {
+  axios
+    .post(`/api/items/add-image/${id}`, id, tokenConfig(getState))
+    .then((res) =>
+      dispatch({
+        type: ADD_IMAGE,
+        payload: res.data,
+      })
+    )
+    .catch((err) =>
+      dispatch(returnErrors(err.response.data, err.response.status))
+    );
 };

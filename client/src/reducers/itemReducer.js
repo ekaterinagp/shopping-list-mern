@@ -4,6 +4,7 @@ import {
   ADD_ITEM,
   DELETE_ITEM,
   ITEMS_LOADING,
+  ADD_IMAGE,
 } from "../actions/types";
 
 const initialState = {
@@ -25,10 +26,12 @@ export default function (state = initialState, action) {
         items: state.items.filter((item) => item._id !== action.payload),
       };
     case ADD_ITEM:
+    case ADD_IMAGE:
       return {
         ...state,
         items: [action.payload, ...state.items],
       };
+
     case ITEMS_LOADING:
       return {
         ...state,

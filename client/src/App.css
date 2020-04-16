@@ -20,6 +20,8 @@
   transition: opacity 1000ms ease-in;
 }
 
-.bla {
-  margin: 10em;
+.item-photo {
+  width: 200px;
+  height: auto;
+  margin: 2em;
 }
